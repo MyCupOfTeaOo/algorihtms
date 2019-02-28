@@ -11,11 +11,11 @@ def sort(array1: list, array2: list):
             yield i
 
 
-def merge(array: list):
+def divide(array: list):
     if len(array) < 2:
         return array
     m_index = int(len(array) / 2)
-    return list(sort(merge(array[:m_index]), merge(array[m_index:])))
+    return list(sort(divide(array[:m_index]), divide(array[m_index:])))
 
 
-print(merge(test))
+print(divide(test))
